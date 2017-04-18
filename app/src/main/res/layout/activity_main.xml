@@ -13,5 +13,123 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/enterSymbol"
+        android:layout_alignBottom="@+id/infoEditText"
+        android:id="@+id/enterSymbolTextView"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="@string/symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/symbolTextView"
+        android:layout_below="@+id/infoEditText"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/symbolTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView1" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nameTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView2" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tradePriceTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView3" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tradeTimeTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView4" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/changeTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView5" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weekTextView"
+        android:layout_alignLeft="@id/infoEditText"
+        android:id="@+id/outputTextView6" />
+
+    <TextView
+        android:text="@string/tradePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tradePriceTextView"
+        android:layout_below="@+id/nameTextView"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:text="@string/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameTextView"
+        android:layout_below="@+id/symbolTextView"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:text="@string/tradeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tradeTimeTextView"
+        android:layout_below="@+id/tradePriceTextView"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:text="@string/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/changeTextView"
+        android:layout_below="@+id/tradeTimeTextView"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:text="@string/range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weekTextView"
+        android:layout_below="@+id/changeTextView"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:text="@string/getInfo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/getInfoButton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/infoEditText"
+        android:hint="@string/hint"
+        android:textSize="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
