@@ -8,5 +8,5 @@
     <string name="tradeTime">Previous Time: </string>
     <string name="change">Difference: </string>
     <string name="range">52 Week Range: </string>
-    <string name="hint">YHOO</string>
+    <string name="hint">YHOO (Yahoo!)</string>
 </resources>
