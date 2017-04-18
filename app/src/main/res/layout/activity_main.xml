@@ -21,12 +21,13 @@
         android:textStyle="normal|bold" />
 
     <TextView
-        android:text="@string/symbol"
+        android:id="@+id/symbolTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/symbolTextView"
         android:layout_below="@+id/infoEditText"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:text="@string/symbol"
+        android:textStyle="bold" />
 
     <TextView
         android:text=""
@@ -77,44 +78,52 @@
         android:id="@+id/outputTextView6" />
 
     <TextView
-        android:text="@string/tradePrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tradePriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/nameTextView"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:text="@string/tradePrice"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="@string/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/symbolTextView"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:text="@string/name"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="@string/tradeTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tradeTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tradePriceTextView"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:text="@string/tradeTime"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="@string/change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/changeTextView"
-        android:layout_below="@+id/tradeTimeTextView"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:text="@string/range"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tradeTimeTextView"
+        android:text="@string/change"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/weekTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/changeTextView"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="@string/range"
+        android:textStyle="bold" />
 
     <Button
         android:text="@string/getInfo"

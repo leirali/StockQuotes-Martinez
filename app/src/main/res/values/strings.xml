@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">StockQuotes-Martinez</string>
-    <string name="enterSymbol">Enter Stock Symbol: </string>
-    <string name="getInfo">Get Info</string>
+    <string name="enterSymbol">Stock Symbol: </string>
+    <string name="getInfo">Get!</string>
     <string name="symbol">Symbol: </string>
     <string name="name">Name: </string>
-    <string name="tradePrice">Last Trade Price: </string>
-    <string name="tradeTime">Last Trade Time: </string>
-    <string name="change">Change: </string>
+    <string name="tradePrice">Previous Price: </string>
+    <string name="tradeTime">Previous Time: </string>
+    <string name="change">Difference: </string>
     <string name="range">52 Week Range: </string>
     <string name="hint">YHOO</string>
 </resources>
