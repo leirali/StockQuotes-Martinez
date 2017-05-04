@@ -9,23 +9,27 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //keeps crashing
-
-    private Button getInfoButton;
+    private Button getButton;
     private EditText infoEditText;
-    private TextView symbol;
-    private TextView name;
-    private TextView previousPrice;
-    private TextView previousTime;
-    private TextView weekRange;
-    private TextView difference;
-    private String inputStr;
-    private String symbol1;
-    private String name1;
-    private String previousPrice1;
-    private String previousTime1;
-    private String weekRange1;
-    private String difference1;
+
+    //input text strings
+    private TextView getSymbol;
+    private TextView getName;
+    private TextView lastPrice;
+    private TextView lastTime;
+    private TextView getChange;
+    private TextView getRange;
+
+    private String inputString;
+
+    //output text strings
+    private String getSymbolOutput;
+    private String getNameOutput;
+    private String lastPriceOutput;
+    private String lastTimeOutput;
+    private String getChangeOutput;
+    private String getRangeOutput;
+
     private Stock inputStock;
     private View mainView;
 
@@ -35,24 +39,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getInfoButton = (Button)findViewById(R.id.getInfoButton);
-        symbol = (TextView)findViewById(R.id.outputTextView1);
-        name = (TextView)findViewById(R.id.outputTextView2);
-        previousPrice = (TextView)findViewById(R.id.outputTextView3);
-        previousTime = (TextView)findViewById(R.id.outputTextView4);
-        weekRange = (TextView)findViewById(R.id.outputTextView5);
-        difference = (TextView)findViewById(R.id.outputTextView6);
+        getButton = (Button)findViewById(R.id.getInfoButton);
+        getSymbol = (TextView)findViewById(R.id.outputTextView1);
+        getName = (TextView)findViewById(R.id.outputTextView2);
+        lastPrice = (TextView)findViewById(R.id.outputTextView3);
+        lastTime = (TextView)findViewById(R.id.outputTextView4);
+        getChange = (TextView)findViewById(R.id.outputTextView5);
+        getRange = (TextView)findViewById(R.id.outputTextView6);
         infoEditText = (EditText)findViewById(R.id.infoEditText);
         mainView = findViewById(R.id.activity_main);
 
-        getInfoButton.setOnClickListener(new View.OnClickListener(){
+        getButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 if(infoEditText.getText().toString() != null) {
-                    inputStr = infoEditText.getText().toString();
+                    inputString = infoEditText.getText().toString();
                 }
-                if(inputStr != null && !inputStr.contains(" ") && inputStr.length() <= 4){
-                    inputStock = new Stock(inputStr);
+                if(inputString != null && !inputString.contains(" ") && inputString.length() <= 4){
+                    inputStock = new Stock(inputString);
                     new Thread() {
                         public void run() {
                             try {
@@ -60,31 +64,31 @@ public class MainActivity extends AppCompatActivity {
 
                             } catch (Exception e) {
                             }
-                            symbol1 = inputStock.getSymbol();
-                            name1 = inputStock.getName();
-                            previousPrice1 = inputStock.getLastTradePrice();
-                            previousTime1 = inputStock.getLastTradeTime();
-                            weekRange1 = inputStock.getChange();
-                            difference1 = inputStock.getRange();
+                            getSymbolOutput = inputStock.getSymbol();
+                            getNameOutput = inputStock.getName();
+                            lastPriceOutput = inputStock.getLastTradePrice();
+                            lastTimeOutput = inputStock.getLastTradeTime();
+                            getChangeOutput = inputStock.getChange();
+                            getRangeOutput = inputStock.getRange();
 
                             mainView.post(new Runnable(){
                                 public void run(){
-                                    symbol.setText(symbol1);
-                                    name.setText(name1);
-                                    previousPrice.setText(previousPrice1);
-                                    previousTime.setText(previousTime1);
-                                    weekRange.setText(weekRange1);
-                                    difference.setText(difference1);
+                                    getSymbol.setText(getSymbolOutput);
+                                    getName.setText(getNameOutput);
+                                    lastPrice.setText(lastPriceOutput);
+                                    lastTime.setText(lastTimeOutput);
+                                    getChange.setText(getChangeOutput);
+                                    getRange.setText(getRangeOutput);
                                 }
                             });
 
-                            if(inputStr.length() == 0 || inputStock.getName().contains("/")){
-                                symbol1 = "Symbol Not Found";
-                                name1 = "N/A";
-                                previousPrice1 = "N/A";
-                                previousTime1 = "N/A";
-                                weekRange1 = "N/A";
-                                difference1 = "N/A";
+                            if(inputString.length() == 0 || inputStock.getName().contains("/")){
+                                getSymbolOutput = "Symbol Not Found";
+                                getNameOutput = "N/A";
+                                lastPriceOutput = "N/A";
+                                lastTimeOutput = "N/A";
+                                getChangeOutput = "N/A";
+                                getRangeOutput = "N/A";
                             }
                         }
                     }.start();
@@ -99,12 +103,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putString("outputText1", symbol.getText().toString());
-        outState.putString("outputText2", name.getText().toString());
-        outState.putString("outputText3", previousPrice.getText().toString());
-        outState.putString("outputText4", previousTime.getText().toString());
-        outState.putString("outputText5", weekRange.getText().toString());
-        outState.putString("outputText6", difference.getText().toString());
+        outState.putString("outputText1", getSymbol.getText().toString());
+        outState.putString("outputText2", getName.getText().toString());
+        outState.putString("outputText3", lastPrice.getText().toString());
+        outState.putString("outputText4", lastTime.getText().toString());
+        outState.putString("outputText5", getChange.getText().toString());
+        outState.putString("outputText6", getRange.getText().toString());
         outState.putString("editTextInfo",infoEditText.getText().toString());
     }
 
@@ -112,12 +116,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
 
-        symbol.setText(savedInstanceState.getString("outputText1"));
-        name.setText(savedInstanceState.getString("outputText2"));
-        previousPrice.setText(savedInstanceState.getString("outputText3"));
-        previousTime.setText(savedInstanceState.getString("outputText4"));
-        weekRange.setText(savedInstanceState.getString("outputText5"));
-        difference.setText(savedInstanceState.getString("outputText6"));
+        getSymbol.setText(savedInstanceState.getString("outputText1"));
+        getName.setText(savedInstanceState.getString("outputText2"));
+        lastPrice.setText(savedInstanceState.getString("outputText3"));
+        lastTime.setText(savedInstanceState.getString("outputText4"));
+        getChange.setText(savedInstanceState.getString("outputText5"));
+        getRange.setText(savedInstanceState.getString("outputText6"));
         infoEditText.setText(savedInstanceState.getString("editTextInfo"));
     }
 }
